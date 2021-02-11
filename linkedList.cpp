@@ -14,8 +14,17 @@ struct Book{
 	const int pubDate_;
 };
 
+//overload << operator to print all book data
 ostream & operator<< (ostream &os, const Book &book){
 	return os << book.title_ << "\nWritten by: " << book.author_ << "\nPublished in: " << book.pubDate_ << endl;
+}
+//overload == operator to compare that 2 books are the same
+bool operator== (const Book &b1, const Book &b2){
+	if(b1.title_ == b2.title_ && b1.author_ == b2.author_ && b1.pubDate_ == b2.pubDate_){
+		return true;
+	}
+	else
+		return false;
 }
 
 //globally declare the four books I will be using in the different tests
@@ -31,8 +40,8 @@ TEST_CASE("Test Queue style list:"){
 	shelf.push_back(book3);
 	shelf.push_back(book4);
 
-	cout << shelf.front() << endl;
 	REQUIRE(shelf.front().title_ == book1.title_);
+	REQUIRE(shelf.back() == book4);
 }
 
 TEST_CASE("Test stack style list"){
