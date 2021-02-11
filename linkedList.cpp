@@ -1,6 +1,7 @@
 #include <iostream>
+#include <list>
+//#include "catch.hpp"
+typedef struct Value{
 
-int main() {
-	std::cout << "Hello, Program 1!" << std::endl;
-	return 0;
-}
+
+};
