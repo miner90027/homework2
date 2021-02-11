@@ -4,7 +4,7 @@ using std::endl;
 void to_lower(char* s);
 
 int main() {
-	char* temp = (char*)"Words on a screen.";
+	char temp[] = "THESE ARE WORDS & OTHER CHARS TO DEMONSTRATE TO_LOWER().";
 	cout << temp << endl;
 	to_lower(temp);
 	cout << temp << endl;
