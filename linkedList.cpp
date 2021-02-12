@@ -80,7 +80,6 @@ TEST_CASE("Test stack style list:"){
 	REQUIRE(shelf.back() == book1);
 }
 
-
 TEST_CASE("Test insert & find"){
 	//make list of books 1-4 in sorted order based on publication date with the newest being the first in the list
 	list<Book> shelf = {book2, book4, book1, book3};
