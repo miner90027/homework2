@@ -8,6 +8,7 @@ using std::cout;
 using std::endl;
 using std::ostream;
 
+//struct Book which stores book data
 struct Book {
 	const string title_;
 	const string author_;
@@ -51,7 +52,7 @@ bool operator> (const Book &b1, const Book &b2){
 		return false;
 }
 
-//globally declare the four books I will be using in the different tests
+//globally declare the four main books I will be using in the different tests
 Book book1 {"The War of the Worlds", "H.G. Wells", 1898};
 Book book2 {"Wine Bottles and Broomsticks","Dave S. Koster",2019};
 Book book3 {"A Study in Scarlet", "Sir Arthur Conan Doyle", 1887};
@@ -96,13 +97,14 @@ TEST_CASE("Test insert & find"){
 			break;
 		}
 	}
-
+	//test to make sure that book1 was found
 	REQUIRE(isFound);
 
 	//insert book5 into list
 	shelf.push_back(book5);
 	shelf.sort();
 	for(auto i: shelf){
+		//check to make sure the list is sorted with the oldest book being the first in the list
 		REQUIRE(i <= shelf.back());
 	}
 
