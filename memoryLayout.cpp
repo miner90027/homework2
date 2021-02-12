@@ -13,15 +13,15 @@ int main() {
 
 
 	cout << "Print contents and memory location of variables allocated to the stack"<< endl;
-	for(auto i: intVec)
+	for(auto & i: intVec)
 	{
 		printPointer(i);
 	}
 
 	cout << endl << "Print contents and memory location of variables allocated in static data"<< endl;
-	for (int i = 0; i < 10; i++)
+	for (int & i : intArray)
 	{
-		printPointer(intArray[i]);
+		printPointer(i);
 	}
 
 
