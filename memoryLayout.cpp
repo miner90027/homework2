@@ -7,9 +7,11 @@ using std::endl;
 void printPointer(int &i);
 
 int main() {
-	int intArray[5] = {0,1,2,3,4};
-	auto arrayNew = new int[5];
+	static int intArray[5] = {0,1,2,3,4};
 	vector<int> intVec = {0,1,2,3,4};
+	int x = 0;
+	int y = 12;
+	int z = 21;
 
 	cout << "Print contents and memory location of variables allocated in static data"<< endl;
 	for (int & i : intArray)
@@ -18,17 +20,15 @@ int main() {
 	}
 
 	cout << endl << "Print contents and memory location of variables allocated to the free store"<< endl;
-	for (int i = 0; i < 5; i++)
-	{
-		arrayNew[i]= i;
-		printPointer(arrayNew[i]);
-	}
-
-	cout << endl <<  "Print contents and memory location of variables allocated to the stack"<< endl;
 	for(auto & i: intVec)
 	{
 		printPointer(i);
 	}
+
+	cout << endl <<  "Print contents and memory location of variables allocated to the stack"<< endl;
+	printPointer(x);
+	printPointer(y);
+	printPointer(z);
 
 }
 
